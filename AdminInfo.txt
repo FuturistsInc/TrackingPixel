@@ -1,0 +1,27 @@
+﻿Database
+Server Name: futuristsinc.database.windows.net
+Server Admin Login:futuristsinc
+Password: Daniel.SK.Sim@gmail.com
+
+
+
+Azure
+Log-in e-mail: koon.min.wong@gmail.com
+Portal website: https://portal.azure.com
+URL- http://trackingpixel.azurewebsites.net
+
+FileZilla information:
+FTP hostname - ftp://waws-prod-sn1-037.ftp.azurewebsites.windows.net
+userName - "TrackingPixel\$TrackingPixel" 
+userPWD - "dE1aklQ5yC14flMo2GPkqc5LWAwvn8JrGtaeTRKztbPyQn2pSk4ElvgKGlrc"
+
+publishUrl="trackingpixel.scm.azurewebsites.net:443"
+
+Github
+https://github.com/FuturistsInc/TrackingPixel.git
+Summary of frequent update commands
+git add -A
+git commit -m "Message Text"
+git status
+git push origin master
+

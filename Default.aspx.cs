@@ -29,7 +29,7 @@ public partial class TrackingPixel_Default : System.Web.UI.Page
                     System.IO.Directory.CreateDirectory(CPNPathAndName);
                     System.IO.File.Copy((Server.MapPath(".") + @"\TrackingPixel.bmp"), (CPNPathAndName + @"\" + CPNName + ".bmp"));
                     System.IO.File.Copy((Server.MapPath(".") + @"\TrackingPixel.txt"), (CPNPathAndName + @"\" + CPNName + ".txt"));
-
+                    System.IO.File.Copy((Server.MapPath(".") + @"\TrackingPixel.accdb"), (CPNPathAndName + @"\" + CPNName +".accdb"));
                     str_ModifiedContents = System.IO.File.ReadAllText(Server.MapPath(".") + @"\TrackingPixel.aspx");
                     str_ModifiedContents = str_ModifiedContents.Replace("TrackingPixel", CPNName);
                     System.IO.File.WriteAllText((CPNPathAndName + @"\" + CPNName + ".aspx"), str_ModifiedContents);

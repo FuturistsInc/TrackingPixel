@@ -13,6 +13,7 @@ public partial class Contents_TrackingPixel : System.Web.UI.Page
         string str_Text = System.IO.File.ReadAllText(Server.MapPath(".") + @"\TrackingPixel.txt")
             + Environment.NewLine + HttpContext.Current.Request.Params[0] + "," + helper_GetDateTimeNow();
         System.IO.File.WriteAllText((Server.MapPath(".") + @"\TrackingPixel.txt"), str_Text);
+        db_AddData(HttpContext.Current.Request.Params[0], helper_GetDateTimeNow());
         Response.Redirect("TrackingPixel.bmp", false);
 
     }
@@ -29,4 +30,18 @@ public partial class Contents_TrackingPixel : System.Web.UI.Page
         //Test with System.Diagnostics.Debug.WriteLine(CLS_Generic.Chp05_7GetStringBetweenTwoStrings("<html><p>Trial Test</p></html>", "<p>", "</p>"));
         return str_FullString.Split(new string[] { str_StartString }, StringSplitOptions.None)[1].Split(new string[] { str_EndString }, StringSplitOptions.None)[0].Trim();
     }
+
+    protected void db_AddData(string str_Email, string str_DateRead)
+    {
+        string str_DBPathName = Server.MapPath(".") + @"\TrackingPixel.accdb";
+        string str_ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + str_DBPathName;
+        System.Data.OleDb.OleDbConnection con = new System.Data.OleDb.OleDbConnection(str_ConnectionString);
+        System.Data.OleDb.OleDbCommand cmd = con.CreateCommand();
+        con.Open();
+        cmd.CommandText = "Insert into CampaignResult(Email,DateRead)Values('" + str_Email + "','" + str_DateRead + "')";
+        cmd.Connection = con;
+        cmd.ExecuteNonQuery();
+        p_status.InnerText = ("Record Submitted, congrats");
+        con.Close();
+    }    
 }
