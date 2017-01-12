@@ -1,0 +1,16 @@
+﻿FileZilla information:
+FTP hostname - ftp://waws-prod-sn1-037.ftp.azurewebsites.windows.net
+userName - "TrackingPixel\$TrackingPixel" 
+userPWD - "dE1aklQ5yC14flMo2GPkqc5LWAwvn8JrGtaeTRKztbPyQn2pSk4ElvgKGlrc"
+
+Azure information:
+URL- http://trackingpixel.azurewebsites.net
+
+Information for Html e-mail:
+
+Link to - http://trackingpixel.azurewebsites.net/TrackingPixel.aspx
+File with e-mail addresses linked - http://trackingpixel.azurewebsites.net/TrackingPixel.txt
+
+
+Information only:
+publishUrl="trackingpixel.scm.azurewebsites.net:443"
