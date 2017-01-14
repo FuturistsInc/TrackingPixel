@@ -16,7 +16,7 @@ public partial class Contents_TrackingPixel : System.Web.UI.Page
             HttpContext.Current.Request.Params[2] + "," + 
             helper_GetDateTimeNow();
         System.IO.File.WriteAllText((Server.MapPath(".") + @"\TrackingPixel.txt"), str_Text);
-        db_AddData(HttpContext.Current.Request.Params[0], HttpContext.Current.Request.Params[1], HttpContext.Current.Request.Params[2], helper_GetDateTimeNow());
+        //db_AddData(HttpContext.Current.Request.Params[0], HttpContext.Current.Request.Params[1], HttpContext.Current.Request.Params[2], helper_GetDateTimeNow());
         Response.Redirect("TrackingPixel.bmp", false);
 
     }
@@ -36,15 +36,15 @@ public partial class Contents_TrackingPixel : System.Web.UI.Page
 
     protected void db_AddData(string str_Email, string str_DateSent, string str_Campaign, string str_DateRead)
     {
-        string str_DBPathName = Server.MapPath(".") + @"\TrackingPixel.accdb";
-        string str_ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + str_DBPathName;
-        System.Data.OleDb.OleDbConnection con = new System.Data.OleDb.OleDbConnection(str_ConnectionString);
-        System.Data.OleDb.OleDbCommand cmd = con.CreateCommand();
-        con.Open();
-        cmd.CommandText = "Insert into CampaignResult(Email,DateSent,Campaign,DateRead)Values('" + str_Email + "','" + str_DateSent + "','" + str_Campaign +"','" + str_DateRead + "')";
-        cmd.Connection = con;
-        cmd.ExecuteNonQuery();
-        p_status.InnerText = ("Record Submitted, congrats");
-        con.Close();
+        //string str_DBPathName = Server.MapPath(".") + @"\TrackingPixel.accdb";
+        //string str_ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + str_DBPathName;
+        //System.Data.OleDb.OleDbConnection con = new System.Data.OleDb.OleDbConnection(str_ConnectionString);
+        //System.Data.OleDb.OleDbCommand cmd = con.CreateCommand();
+        //con.Open();
+        //cmd.CommandText = "Insert into CampaignResult(Email,DateSent,Campaign,DateRead)Values('" + str_Email + "','" + str_DateSent + "','" + str_Campaign +"','" + str_DateRead + "')";
+        //cmd.Connection = con;
+        //cmd.ExecuteNonQuery();
+        //p_status.InnerText = ("Record Submitted, congrats");
+        //con.Close();
     }    
 }
