@@ -10,11 +10,12 @@ public partial class Contents_TrackingPixel : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         //str_Text adds on the latest e-mail respondent to the list of respondents already on the tracking list.
-        string str_Text = System.IO.File.ReadAllText(Server.MapPath(".") + @"\TrackingPixel.txt")
-            + Environment.NewLine + HttpContext.Current.Request.Params[0] + "," +
-            HttpContext.Current.Request.Params[1] + "," +
-            HttpContext.Current.Request.Params[2] + "," + 
-            helper_GetDateTimeNow();
+        string str_Text = System.IO.File.ReadAllText(Server.MapPath(".") + @"\TrackingPixel.txt") + 
+            HttpContext.Current.Request.Params[0] + ";" +
+            HttpContext.Current.Request.Params[1] + ";" +
+            HttpContext.Current.Request.Params[2] + ";" + 
+            helper_GetDateTimeNow()+
+			Environment.NewLine;
         System.IO.File.WriteAllText((Server.MapPath(".") + @"\TrackingPixel.txt"), str_Text);
         //db_AddData(HttpContext.Current.Request.Params[0], HttpContext.Current.Request.Params[1], HttpContext.Current.Request.Params[2], helper_GetDateTimeNow());
         Response.Redirect("TrackingPixel.bmp", false);
