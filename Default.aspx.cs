@@ -22,7 +22,8 @@ public partial class TrackingPixel_Default : System.Web.UI.Page
             p_status.InnerText = "";
             foreach (string subdir in filesindirectory)
             {
-                p_status.InnerText = p_status.InnerText + subdir + ";";
+                string CPNName = new System.IO.DirectoryInfo(subdir).Name;
+                p_status.InnerText = p_status.InnerText + CPNName + ";";
             }            
         }
         else if (str_Params.Length > 9)
