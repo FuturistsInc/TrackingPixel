@@ -16,6 +16,15 @@ public partial class TrackingPixel_Default : System.Web.UI.Page
         {            
             p_status.InnerText = helper_GetDateTimeNow();
         }
+        else if (str_Params == "ListOfCPN")
+        {
+            string[] filesindirectory = System.IO.Directory.GetDirectories(Server.MapPath("."));
+            p_status.InnerText = "";
+            foreach (string subdir in filesindirectory)
+            {
+                p_status.InnerText = p_status.InnerText + subdir + ";";
+            }            
+        }
         else if (str_Params.Length > 9)
         {
             if (str_Params.Substring(0, 9) == "CreateCPN")
